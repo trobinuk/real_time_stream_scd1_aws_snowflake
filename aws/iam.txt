@@ -1,0 +1,48 @@
+Trust relationship:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": [
+                    "apigateway.amazonaws.com",
+                    "lambda.amazonaws.com",
+                    "firehose.amazonaws.com"
+                ]
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+
+Permissions:
+AmazonKinesisFirehoseFullAccess
+AmazonKinesisFullAccess
+AmazonS3FullAccess
+AWSLambda_FullAccess
+CloudWatchFullAccess
+
+Snowflake IAM:
+Trust relationship:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::407676141810:user/9f8z1000-s"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {
+                "StringEquals": {
+                    "sts:ExternalId": "UV59009_SFCRole=2_VunlPYir/3ZL1ZZ8EPEgZW46z34="
+                }
+            }
+        }
+    ]
+}
+
+Permissions:
+AmazonS3FullAccess
